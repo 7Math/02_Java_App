@@ -37,6 +37,23 @@ public class App
                  // Executing the query and storing the result in a ResultSet object
                  ResultSet rs = stmt.executeQuery("SELECT * FROM mydb.employees");
                  System.out.println(rs);
+ // Iterating through the ResultSet and printing the contents
+ while (rs.next()) {
+
+    // fetch
+    String name = rs.getString("name");
+    String surname = rs.getString("surname");
+    int age = rs.getInt("age");
+    int salary = rs.getInt("salary");
+    int employee_id = rs.getInt("employee_id");
+
+    // print
+    String printStr =   "ID: " + employee_id +
+                        ", Name: " + surname + " " + name +
+                        ", Salary: " + salary +
+                        ", Age: " + age;
+    System.out.println(printStr);
+}
 
 
 
