@@ -26,10 +26,20 @@ public class App
     
             try (Connection con = DriverManager.getConnection(conURL, usrStr, usrPwd)) {
     
-                //System.out.println("Success!");  
+               System.out.println("Success!");  
                System.out.println(con);
+
+
  
-                
+                 // Creating a statement object
+                 Statement stmt = con.createStatement();
+
+                 // Executing the query and storing the result in a ResultSet object
+                 ResultSet rs = stmt.executeQuery("SELECT * FROM mydb.employees");
+                 System.out.println(rs);
+
+
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
